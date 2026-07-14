@@ -40,7 +40,7 @@ export const services = [
     description:
       'Handcrafted wedding invitations — from classic Kannada & Sanskrit layouts to contemporary designs, with foiling, embossing and premium paper stocks.',
     priceFrom: '₹—', // TODO: real starting price
-    image: ph('parisara-wedding', 800, 600),
+    image: '/services/wedding.jpg',
   },
   {
     slug: 'visiting-cards',
@@ -49,7 +49,7 @@ export const services = [
     description:
       'Crisp business cards on a range of stocks and finishes — matte, gloss, textured and spot-UV. Fast turnaround for bulk orders.',
     priceFrom: '₹—',
-    image: ph('parisara-visiting', 800, 600),
+    image: '/services/visiting.jpg',
   },
   {
     slug: 'letterheads',
@@ -58,7 +58,7 @@ export const services = [
     description:
       'Company letterheads printed with sharp registration and consistent brand colours. Single or multi-colour, on premium bond paper.',
     priceFrom: '₹—',
-    image: ph('parisara-letterhead', 800, 600),
+    image: '/services/letter.jpg',
   },
   {
     slug: 'bill-books',
@@ -67,7 +67,7 @@ export const services = [
     description:
       'Numbered invoice and bill books — duplicate/triplicate carbonless (NCR) sets, GST-ready formats, bound and perforated.',
     priceFrom: '₹—',
-    image: ph('parisara-billbook', 800, 600),
+    image: '/services/billbook.jpg',
   },
   {
     slug: 'brochures-flyers',
@@ -76,7 +76,7 @@ export const services = [
     description:
       'Single and multi-fold brochures, flyers and leaflets — vibrant full-colour printing that makes your business stand out.',
     priceFrom: '₹—',
-    image: ph('parisara-brochure', 800, 600),
+    image: '/services/flyers.jpg',
   },
   {
     slug: 'stickers-labels',
@@ -85,7 +85,7 @@ export const services = [
     description:
       'Custom-cut stickers and product labels — glossy, matte, transparent and vinyl, in any shape or size.',
     priceFrom: '₹—',
-    image: ph('parisara-stickers', 800, 600),
+    image: '/services/label.jpg',
   },
   {
     slug: 'custom',

@@ -7,6 +7,16 @@ import { business, services, testimonials, wa } from '../data/site'
 
 const featured = services.slice(0, 6)
 
+// Home-page-only images (from /public/home). Does not affect Services/Gallery.
+const HOME_FEATURED_IMAGES = {
+  'wedding-cards': '/home/wedding2.png',
+  'visiting-cards': '/home/visit2.jpeg',
+  letterheads: '/home/letter2.png',
+  'bill-books': '/home/billbook.png',
+  'brochures-flyers': '/home/flyers.png',
+  'stickers-labels': '/home/label.png',
+}
+
 export default function Home() {
   return (
     <>
@@ -99,10 +109,10 @@ export default function Home() {
           <SectionHeading eyebrow="What We Print" title="Our Print Categories" />
           <div className="mt-10 grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-6">
             {[
-              { name: 'Wedding Cards', slug: 'wedding-cards' },
-              { name: 'Visiting Cards', slug: 'visiting-cards' },
-              { name: 'Letterheads', slug: 'letterheads' },
-              { name: 'More', slug: '' },
+              { name: 'Wedding Cards', img: '/home/wedding1.png' },
+              { name: 'Visiting Cards', img: '/home/visit1.png' },
+              { name: 'Letterheads', img: '/home/letter1.png' },
+              { name: 'More', img: '/home/more.png' },
             ].map((cat, i) => (
               <Reveal key={cat.name} delay={i * 0.08}>
                 <Link
@@ -110,11 +120,7 @@ export default function Home() {
                   className="group relative flex aspect-[4/5] flex-col justify-end overflow-hidden rounded-lg bg-deep-ink p-5 shadow-card transition-shadow hover:shadow-card-hover"
                 >
                   <img
-                    src={
-                      cat.slug
-                        ? services.find((s) => s.slug === cat.slug)?.image
-                        : 'https://picsum.photos/seed/parisara-more/600/750'
-                    }
+                    src={cat.img}
                     alt={cat.name}
                     loading="lazy"
                     className="absolute inset-0 h-full w-full object-cover opacity-70 transition-transform duration-500 group-hover:scale-105"
@@ -144,7 +150,7 @@ export default function Home() {
                 style={{ rotate: `${i % 2 === 0 ? -1.5 : 1.8}deg` }}
               >
                 <img
-                  src={s.image}
+                  src={HOME_FEATURED_IMAGES[s.slug] || s.image}
                   alt={s.name}
                   loading="lazy"
                   className="aspect-square w-full rounded-sm object-cover"

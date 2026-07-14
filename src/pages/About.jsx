@@ -24,8 +24,6 @@ const reasons = [
 
 const shopPhotos = [
   { src: 'https://picsum.photos/seed/parisara-shopfront/800/600', alt: 'Parisara Screens shop front in Chamrajpet' },
-  { src: 'https://picsum.photos/seed/parisara-machine/800/600', alt: 'Printing machine at work' },
-  { src: 'https://picsum.photos/seed/parisara-founder/800/600', alt: 'Founder working at the press' },
 ]
 
 export default function About() {
@@ -102,28 +100,6 @@ export default function About() {
               </Reveal>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Shop photos */}
-      <section className="container-x py-16 md:py-24">
-        <SectionHeading eyebrow="Inside The Shop" title="Where It All Happens" />
-        <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-3">
-          {shopPhotos.map((p, i) => (
-            <Reveal key={p.src} delay={i * 0.08}>
-              <figure
-                className="tape relative overflow-hidden rounded-sm bg-paper p-2 shadow-card"
-                style={{ rotate: `${i % 2 === 0 ? -1.2 : 1.6}deg` }}
-              >
-                <img
-                  src={p.src}
-                  alt={p.alt}
-                  loading="lazy"
-                  className="aspect-[4/3] w-full rounded-sm object-cover"
-                />
-              </figure>
-            </Reveal>
-          ))}
         </div>
       </section>
     </>

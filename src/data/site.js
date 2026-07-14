@@ -94,7 +94,7 @@ export const services = [
     description:
       "Envelopes, ID cards, calendars, certificates, menu cards and more. If it can be printed, we can help — just tell us what you need.",
     priceFrom: '₹—',
-    image: ph('parisara-custom', 800, 600),
+    image: '/services/others.jpg',
   },
 ]
 

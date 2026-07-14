@@ -9,12 +9,12 @@ const featured = services.slice(0, 6)
 
 // Home-page-only images (from /public/home). Does not affect Services/Gallery.
 const HOME_FEATURED_IMAGES = {
-  'wedding-cards': '/home/wedding2.png',
-  'visiting-cards': '/home/visit2.jpeg',
-  letterheads: '/home/letter2.png',
-  'bill-books': '/home/billbook.png',
-  'brochures-flyers': '/home/flyers.png',
-  'stickers-labels': '/home/label.png',
+  'wedding-cards': '/home/wedding2.jpg',
+  'visiting-cards': '/home/visit2.jpg',
+  letterheads: '/home/letter2.jpg',
+  'bill-books': '/home/billbook.jpg',
+  'brochures-flyers': '/home/flyers.jpg',
+  'stickers-labels': '/home/label.jpg',
 }
 
 export default function Home() {
@@ -25,7 +25,7 @@ export default function Home() {
         {/* Full-bleed photo */}
         <div className="absolute inset-0">
           <img
-            src="/hero.png"
+            src="/hero.jpg"
             alt="Screen printing at Parisara Screens, Chamrajpet"
             className="h-full w-full object-cover"
           />
@@ -109,10 +109,10 @@ export default function Home() {
           <SectionHeading eyebrow="What We Print" title="Our Print Categories" />
           <div className="mt-10 grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-6">
             {[
-              { name: 'Wedding Cards', img: '/home/wedding1.png' },
-              { name: 'Visiting Cards', img: '/home/visit1.png' },
-              { name: 'Letterheads', img: '/home/letter1.png' },
-              { name: 'More', img: '/home/more.png' },
+              { name: 'Wedding Cards', img: '/home/wedding1.jpg' },
+              { name: 'Visiting Cards', img: '/home/visit1.jpg' },
+              { name: 'Letterheads', img: '/home/letter1.jpg' },
+              { name: 'More', img: '/home/more.jpg' },
             ].map((cat, i) => (
               <Reveal key={cat.name} delay={i * 0.08}>
                 <Link

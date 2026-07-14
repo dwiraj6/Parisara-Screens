@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --paper: #f3ede1;
+  --paper-shadow: #e4d9c4;
+  --ink-red: #b5342e;
+  --deep-ink: #2b211c;
+  --gold: #c7912f;
+}
+
+@layer base {
+  html {
+    scroll-behavior: auto; /* Lenis handles smooth scroll */
+  }
+
+  body {
+    @apply bg-paper text-deep-ink font-serif antialiased;
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display uppercase tracking-tight;
+  }
+
+  ::selection {
+    background: var(--ink-red);
+    color: var(--paper);
+  }
+
+  /* Accessible focus ring */
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible {
+    outline: 2px solid var(--ink-red);
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-content px-6 md:px-10;
+  }
+
+  .eyebrow {
+    @apply font-mono text-xs uppercase tracking-[0.3em] text-ink-red;
+  }
+
+  /* Paper grain — subtle fractal-noise overlay, site-wide */
+  .paper-grain {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+  }
+
+  /* Torn-paper edge mask — used on section dividers and hero */
+  .torn-bottom {
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='24' preserveAspectRatio='none'%3E%3Cpath d='M0 0 H1200 V14 L1180 18 L1160 10 L1130 20 L1100 12 L1070 21 L1035 11 L1000 19 L965 12 L930 22 L895 13 L860 20 L820 11 L785 21 L750 13 L710 22 L675 12 L640 20 L600 11 L560 21 L525 13 L490 22 L455 12 L415 20 L380 11 L345 21 L310 13 L270 22 L235 12 L200 20 L165 11 L130 21 L95 13 L60 22 L30 12 L0 20 Z' fill='black'/%3E%3C/svg%3E");
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='24' preserveAspectRatio='none'%3E%3Cpath d='M0 0 H1200 V14 L1180 18 L1160 10 L1130 20 L1100 12 L1070 21 L1035 11 L1000 19 L965 12 L930 22 L895 13 L860 20 L820 11 L785 21 L750 13 L710 22 L675 12 L640 20 L600 11 L560 21 L525 13 L490 22 L455 12 L415 20 L380 11 L345 21 L310 13 L270 22 L235 12 L200 20 L165 11 L130 21 L95 13 L60 22 L30 12 L0 20 Z' fill='black'/%3E%3C/svg%3E");
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+  }
+
+  /* Tape corner used on gallery/featured photos */
+  .tape::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    width: 84px;
+    height: 26px;
+    transform: translateX(-50%) rotate(-4deg);
+    background: rgba(199, 145, 47, 0.32);
+    box-shadow: inset 0 0 0 1px rgba(199, 145, 47, 0.25);
+    z-index: 3;
+  }
+}
+
+/* Custom cursor: hide native pointer on fine-pointer devices only */
+@media (pointer: fine) {
+  .cursor-enabled,
+  .cursor-enabled * {
+    cursor: none !important;
+  }
+}
+
+/* Registration / crop corner marks (decorative) */
+.reg-mark {
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  border-color: rgba(181, 52, 46, 0.35);
+  pointer-events: none;
+}
+
+/* Respect reduced motion — kill non-essential transitions/animations */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -23,7 +23,7 @@ const reasons = [
 ]
 
 const shopPhotos = [
-  { src: 'https://picsum.photos/seed/parisara-shopfront/800/600', alt: 'Parisara Screens shop front in Chamrajpet' },
+  { src: '/about/about.jpg', alt: 'Parisara Screens shop front in Chamrajpet' },
 ]
 
 export default function About() {

@@ -14,10 +14,10 @@ export const business = {
   hours: 'Mon–Sat, 10:00 AM – 6:00 PM',
   hoursNote: 'Sunday Closed',
   serviceArea: 'Serving customers all over India',
-  mapsShareLink: 'https://share.google/rCIWbXsQDToivVGgX',
-  // Keyless embed via query — swap for a place-ID embed if you have one.
+  mapsShareLink: 'https://maps.app.goo.gl/bMgugkN51QHmbeSB9',
+  // Keyless embed pinning the exact shop coordinates from the shared location.
   mapsEmbed:
-    'https://www.google.com/maps?q=Parisara%20Screens%2C%20165%205th%20Main%205th%20Cross%20Chamrajpet%20Bengaluru%20560018&output=embed',
+    'https://www.google.com/maps?q=12.9564764,77.5649635&z=16&output=embed',
   // Add real handles once created — see PLACEHOLDERS.md
   socials: {
     instagram: 'https://www.instagram.com/parisarascreens',

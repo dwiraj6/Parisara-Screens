@@ -20,7 +20,7 @@ export const business = {
     'https://www.google.com/maps?q=Parisara%20Screens%2C%20165%205th%20Main%205th%20Cross%20Chamrajpet%20Bengaluru%20560018&output=embed',
   // Add real handles once created — see PLACEHOLDERS.md
   socials: {
-    instagram: '',
+    instagram: 'https://www.instagram.com/parisarascreens',
     facebook: '',
   },
 }

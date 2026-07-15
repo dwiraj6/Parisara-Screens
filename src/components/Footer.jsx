@@ -127,24 +127,28 @@ export default function Footer() {
         <div>
           <h4 className="font-mono text-xs uppercase tracking-[0.22em] text-paper/60">Connect</h4>
           <div className="mt-4 flex items-center gap-3">
-            <a
-              href={business.socials.instagram || '#'}
-              target={business.socials.instagram ? '_blank' : undefined}
-              rel="noopener noreferrer"
-              aria-label="Instagram"
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-paper/20 text-paper/85 transition-colors hover:border-gold hover:text-gold"
-            >
-              <IconInstagram />
-            </a>
-            <a
-              href={business.socials.facebook || '#'}
-              target={business.socials.facebook ? '_blank' : undefined}
-              rel="noopener noreferrer"
-              aria-label="Facebook"
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-paper/20 text-paper/85 transition-colors hover:border-gold hover:text-gold"
-            >
-              <IconFacebook />
-            </a>
+            {business.socials.instagram && (
+              <a
+                href={business.socials.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-paper/20 text-paper/85 transition-colors hover:border-gold hover:text-gold"
+              >
+                <IconInstagram />
+              </a>
+            )}
+            {business.socials.facebook && (
+              <a
+                href={business.socials.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-paper/20 text-paper/85 transition-colors hover:border-gold hover:text-gold"
+              >
+                <IconFacebook />
+              </a>
+            )}
             <a
               href={business.mapsShareLink}
               target="_blank"
@@ -155,7 +159,9 @@ export default function Footer() {
               <IconPin />
             </a>
           </div>
-          <p className="mt-4 text-xs text-paper/50">Instagram & Facebook links coming soon.</p>
+          {!business.socials.facebook && (
+            <p className="mt-4 text-xs text-paper/50">Facebook link coming soon.</p>
+          )}
         </div>
       </div>
 

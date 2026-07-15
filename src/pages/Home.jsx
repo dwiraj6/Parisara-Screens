@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { motion } from 'motion/react'
+import { motion, useReducedMotion } from 'motion/react'
 import Reveal from '../components/Reveal'
 import TornDivider from '../components/TornDivider'
 import { InkBleedHeading, TrustBadge, SectionHeading } from '../components/ui'
@@ -18,6 +18,7 @@ const HOME_FEATURED_IMAGES = {
 }
 
 export default function Home() {
+  const reduce = useReducedMotion()
   return (
     <>
       {/* ===== HERO ===== */}
@@ -29,14 +30,17 @@ export default function Home() {
             alt="Screen printing at Parisara Screens, Chamrajpet"
             className="h-full w-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-deep-ink/80 via-deep-ink/45 to-deep-ink/85" />
+          {/* Vertical depth scrim */}
+          <div className="absolute inset-0 bg-gradient-to-b from-deep-ink/85 via-deep-ink/60 to-deep-ink/90" />
+          {/* Left scrim protects the (left-aligned) headline over the busy photo */}
+          <div className="absolute inset-0 bg-gradient-to-r from-deep-ink/90 via-deep-ink/55 to-transparent" />
         </div>
         {/* Torn bottom edge revealing paper below */}
         <div className="absolute inset-x-0 bottom-0 z-10 h-6 bg-paper torn-bottom rotate-180" />
 
         <div className="container-x relative z-20 pt-24 text-paper">
           <motion.p
-            initial={{ opacity: 0 }}
+            initial={reduce ? false : { opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.1, duration: 0.8 }}
             className="eyebrow !text-gold"
@@ -46,23 +50,23 @@ export default function Home() {
 
           <InkBleedHeading
             text={"Parisara Screens —\nTrusted Printing Partner"}
-            className="mt-4 max-w-4xl font-display text-hero uppercase text-paper"
+            className="mt-4 max-w-4xl break-words font-display text-hero uppercase text-paper [text-shadow:0_2px_24px_rgba(20,14,10,0.55)]"
           />
 
           <motion.p
-            initial={{ opacity: 0, y: 16 }}
+            initial={reduce ? false : { opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.1, duration: 0.8 }}
-            className="mt-6 max-w-xl font-serif text-lg text-paper/85"
+            transition={{ delay: 0.7, duration: 0.7 }}
+            className="mt-6 max-w-xl text-pretty font-serif text-lg text-paper/90 [text-shadow:0_1px_12px_rgba(20,14,10,0.5)]"
           >
             For over <strong className="text-gold">25 years</strong>, we've printed wedding cards,
             visiting cards, letterheads and more for families and businesses all over India.
           </motion.p>
 
           <motion.div
-            initial={{ opacity: 0, y: 16 }}
+            initial={reduce ? false : { opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.3, duration: 0.8 }}
+            transition={{ delay: 0.85, duration: 0.7 }}
             className="mt-8 flex flex-wrap items-center gap-4"
           >
             <a
@@ -82,9 +86,9 @@ export default function Home() {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0 }}
+            initial={reduce ? false : { opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 1.6, duration: 0.8 }}
+            transition={{ delay: 1.0, duration: 0.7 }}
             className="mt-10"
           >
             <TrustBadge />
@@ -105,7 +109,7 @@ export default function Home() {
       {/* ===== CATEGORY TILES ===== */}
       <section className="bg-paper-shadow/50 py-16 md:py-24">
         <div className="container-x">
-          <SectionHeading eyebrow="What We Print" title="Our Print Categories" />
+          <SectionHeading title="Our Print Categories" />
           <div className="mt-10 grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-6">
             {[
               { name: 'Wedding Cards', img: '/home/wedding1.jpg' },
@@ -140,7 +144,7 @@ export default function Home() {
 
       {/* ===== FEATURED WORK STRIP ===== */}
       <section className="container-x py-16 md:py-24">
-        <SectionHeading eyebrow="Recent Work" title="A Look At Our Printing" />
+        <SectionHeading title="A Look At Our Printing" />
         <div className="mt-10 grid grid-cols-2 gap-6 md:grid-cols-3">
           {featured.map((s, i) => (
             <Reveal key={s.slug} delay={(i % 3) * 0.08}>
@@ -168,7 +172,7 @@ export default function Home() {
       {/* ===== TESTIMONIALS ===== */}
       <section className="bg-deep-ink py-16 text-paper md:py-24">
         <div className="container-x">
-          <SectionHeading eyebrow="Kind Words" title="What Our Customers Say" />
+          <SectionHeading title="What Our Customers Say" onDark />
           <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
             {testimonials.map((t, i) => (
               <Reveal key={t.name} delay={i * 0.1}>

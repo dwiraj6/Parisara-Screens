@@ -58,10 +58,10 @@ export default function Gallery() {
             <button
               key={c.key}
               onClick={() => setFilter(c.key)}
-              className={`rounded-full border px-4 py-2 font-mono text-[11px] uppercase tracking-[0.16em] transition-colors ${
+              className={`inline-flex min-h-[44px] items-center rounded-full border px-5 font-mono text-[11px] uppercase tracking-[0.16em] transition-colors active:scale-[0.97] ${
                 filter === c.key
                   ? 'border-ink-red bg-ink-red text-paper'
-                  : 'border-deep-ink/20 text-deep-ink/70 hover:border-ink-red hover:text-ink-red'
+                  : 'border-deep-ink/25 text-deep-ink/75 hover:border-ink-red hover:text-ink-red'
               }`}
             >
               {c.label}

@@ -40,7 +40,7 @@ export default function Contact() {
   }
 
   const inputClass =
-    'w-full rounded-lg border border-deep-ink/20 bg-paper px-4 py-3 font-serif text-deep-ink placeholder-deep-ink/40 outline-none transition-colors focus:border-ink-red'
+    'w-full rounded-lg border border-deep-ink/25 bg-paper px-4 py-3 font-serif text-deep-ink placeholder-deep-ink/60 outline-none transition-colors focus:border-ink-red'
 
   return (
     <>
@@ -63,7 +63,7 @@ export default function Contact() {
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
           {/* Left: details + map */}
           <div>
-            <SectionHeading eyebrow="Visit Us" title="The Print People" />
+            <SectionHeading title="The Print People" />
             <div className="mt-6 space-y-5 font-serif text-deep-ink/85">
               <div>
                 <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-ink-red">Address</p>
@@ -121,7 +121,7 @@ export default function Contact() {
 
           {/* Right: form */}
           <div>
-            <SectionHeading eyebrow="Send An Enquiry" title="Tell Us What You Need" />
+            <SectionHeading title="Tell Us What You Need" />
             <form onSubmit={submit} className="mt-6 space-y-4">
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 <div>
@@ -147,7 +147,7 @@ export default function Contact() {
 
               <div>
                 <label className="mb-1.5 block font-mono text-[11px] uppercase tracking-[0.16em] text-deep-ink/70">
-                  Email <span className="text-deep-ink/40">(optional)</span>
+                  Email <span className="text-deep-ink/60">(optional)</span>
                 </label>
                 <input type="email" value={form.email} onChange={set('email')} className={inputClass} placeholder="you@example.com" />
               </div>
@@ -204,7 +204,7 @@ export default function Contact() {
               >
                 {sent ? '✓ Opening WhatsApp…' : 'Send Enquiry'}
               </button>
-              <p className="text-center font-mono text-[10px] uppercase tracking-[0.14em] text-deep-ink/50">
+              <p className="text-center font-mono text-[11px] uppercase tracking-[0.14em] text-deep-ink/65">
                 Submitting opens WhatsApp with your details pre-filled
               </p>
             </form>
@@ -217,7 +217,7 @@ export default function Contact() {
       {/* FAQ */}
       <section className="bg-paper-shadow/50 py-16 md:py-24">
         <div className="container-x max-w-3xl">
-          <SectionHeading eyebrow="Questions" title="Frequently Asked" center />
+          <SectionHeading title="Frequently Asked" center />
           <div className="mt-10 divide-y divide-deep-ink/10 border-y border-deep-ink/10">
             {faqs.map((f, i) => (
               <div key={f.q}>

@@ -60,7 +60,7 @@ export default function About() {
             </div>
           </Reveal>
           <div>
-            <SectionHeading eyebrow="A Family Business" title="Built On Trust & Ink" />
+            <SectionHeading title="Built On Trust & Ink" />
             <Reveal delay={0.1} className="mt-5 space-y-4 font-serif text-deep-ink/85">
               <p>
                 What started with a single press and a simple belief — that good printing is built on
@@ -88,7 +88,7 @@ export default function About() {
       {/* Why choose us */}
       <section className="bg-paper-shadow/50 py-16 md:py-24">
         <div className="container-x">
-          <SectionHeading eyebrow="Why Choose Us" title="Reasons Bengaluru Trusts Us" center />
+          <SectionHeading title="Reasons Bengaluru Trusts Us" center />
           <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {reasons.map((r, i) => (
               <Reveal key={r.title} delay={i * 0.08}>

@@ -17,7 +17,7 @@ export default {
       },
       fontSize: {
         // fluid headline scale
-        hero: ['clamp(2.5rem, 8vw, 4.5rem)', { lineHeight: '0.95', letterSpacing: '-0.01em' }],
+        hero: ['clamp(1.95rem, 6.2vw, 4.5rem)', { lineHeight: '1', letterSpacing: '-0.015em' }],
         display: ['clamp(2rem, 5vw, 3.25rem)', { lineHeight: '1', letterSpacing: '-0.01em' }],
         subhead: ['clamp(1.5rem, 3vw, 2rem)', { lineHeight: '1.15' }],
       },

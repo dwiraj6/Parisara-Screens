@@ -13,14 +13,18 @@ export function TrustBadge({ className = '' }) {
   )
 }
 
-// Section heading with eyebrow
-export function SectionHeading({ eyebrow, title, className = '', center = false }) {
+// Section heading — a strong display title with a short ink rule (a printer's
+// registration mark, not the generic tracked-caps eyebrow).
+export function SectionHeading({ title, className = '', center = false, onDark = false }) {
   return (
     <div className={`${center ? 'mx-auto max-w-2xl text-center' : ''} ${className}`}>
-      {eyebrow && <Reveal className="eyebrow mb-3 block">{eyebrow}</Reveal>}
-      <Reveal as="h2" delay={0.05} className="text-display text-deep-ink">
+      <Reveal as="h2" className={`text-balance text-display ${onDark ? 'text-paper' : 'text-deep-ink'}`}>
         {title}
       </Reveal>
+      <Reveal
+        delay={0.08}
+        className={`mt-4 h-[3px] w-12 rounded-full bg-ink-red ${center ? 'mx-auto' : ''}`}
+      />
     </div>
   )
 }
@@ -58,19 +62,19 @@ export function InkBleedHeading({ text, className = '' }) {
       className={className}
       initial="hidden"
       animate="show"
-      variants={{ show: { transition: { staggerChildren: 0.09, delayChildren: 0.15 } } }}
+      variants={{ show: { transition: { staggerChildren: 0.12, delayChildren: 0.1 } } }}
     >
       {words.map((w, i) => (
         <motion.span
           key={i}
           className="block"
           variants={{
-            hidden: { opacity: 0, y: 14, filter: 'blur(12px)' },
+            hidden: { opacity: 0, y: 10, filter: 'blur(8px)' },
             show: {
               opacity: 1,
               y: 0,
               filter: 'blur(0px)',
-              transition: { duration: 1.2, ease: [0.22, 1, 0.36, 1] },
+              transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] },
             },
           }}
         >

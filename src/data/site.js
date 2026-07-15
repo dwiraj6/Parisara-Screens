@@ -13,7 +13,7 @@ export const business = {
   addressShort: 'Chamrajpet, Bengaluru – 560018',
   hours: 'Mon–Sat, 10:00 AM – 6:00 PM',
   hoursNote: 'Sunday Closed',
-  serviceArea: 'Serving Chamrajpet, Basavanagudi, JC Nagar & all of Bengaluru',
+  serviceArea: 'Serving customers all over India',
   mapsShareLink: 'https://share.google/rCIWbXsQDToivVGgX',
   // Keyless embed via query — swap for a place-ID embed if you have one.
   mapsEmbed:
@@ -160,7 +160,7 @@ export const faqs = [
   },
   {
     q: 'Which areas do you serve?',
-    a: 'We are based in Chamrajpet and serve Basavanagudi, JC Nagar and all of Bengaluru. You are welcome to visit the shop or coordinate over WhatsApp.',
+    a: 'We are based in Chamrajpet, Bengaluru and serve customers all over India. You are welcome to visit the shop or coordinate over WhatsApp, and we can arrange delivery across the country.',
   },
 ]
 

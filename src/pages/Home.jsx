@@ -56,8 +56,7 @@ export default function Home() {
             className="mt-6 max-w-xl font-serif text-lg text-paper/85"
           >
             For over <strong className="text-gold">25 years</strong>, we've printed wedding cards,
-            visiting cards, letterheads and more for families and businesses across Chamrajpet and
-            all of Bengaluru.
+            visiting cards, letterheads and more for families and businesses all over India.
           </motion.p>
 
           <motion.div

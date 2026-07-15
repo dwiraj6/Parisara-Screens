@@ -125,19 +125,19 @@ export const testimonials = [
     quote:
       'We have printed our wedding cards and all our shop stationery here for years. Quality and timing are always perfect.',
     name: 'Ramesh K.',
-    role: 'Chamrajpet',
+    role: '',
   },
   {
     quote:
       'Best printing shop in the area. They understood exactly what we wanted for our visiting cards and delivered in two days.',
     name: 'Lakshmi S.',
-    role: 'Basavanagudi',
+    role: '',
   },
   {
     quote:
       '25 years of experience really shows. Honest pricing and beautiful finish on our brochures.',
     name: 'Imran A.',
-    role: 'JC Nagar',
+    role: '',
   },
 ]
 

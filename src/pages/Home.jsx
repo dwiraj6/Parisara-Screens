@@ -176,7 +176,8 @@ export default function Home() {
                   <span className="font-display text-5xl leading-none text-ink-red">“</span>
                   <p className="-mt-2 flex-1 font-serif text-paper/85">{t.quote}</p>
                   <footer className="mt-4 font-mono text-[11px] uppercase tracking-[0.16em] text-gold">
-                    {t.name} · <span className="text-paper/50">{t.role}</span>
+                    {t.name}
+                    {t.role && <span className="text-paper/50"> · {t.role}</span>}
                   </footer>
                 </blockquote>
               </Reveal>
